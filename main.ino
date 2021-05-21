@@ -121,7 +121,6 @@ int mainFunction() {
 
   // the if statement executes only if operation key is 1 and any operation button is pressed
   if(curOp > 70 && keyOp == 1) {
-    
     //convert first operand string into number while the operation is not chosen but an operation button is pressed
     if (operation == 0) {
       // count digits using std library function
@@ -156,24 +155,27 @@ int mainFunction() {
       signPlaced = 0;
       // =============== operations =================
       // choose and operation
-      if (curOp <= 317 && curOp >= 314){ // op1^op2
+      if (curOp <= 319 && curOp >= 311){ // op1^op2
         operation = '^';
       }
-      if (curOp <= 471 && curOp >= 467){ // op1/op2
+      if (curOp <= 473 && curOp >= 465){ // op1/op2
         operation = '/';
       }
-      if (curOp <= 632 && curOp >= 628){ // op1*op2
+      if (curOp <= 634 && curOp >= 626){ // op1*op2
         operation = '*';
       }
-      if (curOp <= 813 && curOp >= 809){ // op1-op2
+      if (curOp <= 815 && curOp >= 807){ // op1-op2
         operation = '-';
       }
-      if (curOp <= 1023 && curOp >= 1021){ // op1+op2
+      if (curOp <= 1023 && curOp >= 1019){ // op1+op2
         operation = '+';
       }
-      lcd.setCursor(15,0);
-      lcd.print(operation);
-      lcd.setCursor(1,1);
+      // if operation was chosen
+      if (operation != 0) {
+        lcd.setCursor(15,0);
+        lcd.print(operation);
+        lcd.setCursor(1,1);
+      }
     }
     
     // compute result if equals are chosen
